@@ -1,15 +1,18 @@
 import React from "react"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
-import Test from "./pages/Test"
-import Home from "./pages/Home"
+import CardCollectionPage from "./features/Collection/CardCollectionPage"
 import "./App.css"
+import TableOfContents from "./pages/TableOfContents"
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/test" element={<Test />} />
+        <Route path="/" element={<TableOfContents />} />
+        <Route
+          path="/collection/:collectionId"
+          element={<CardCollectionPage />}
+        />
       </Routes>
     </Router>
   )
